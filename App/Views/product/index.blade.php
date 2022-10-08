@@ -8,6 +8,6 @@
 <!-- yield(tên) ~ section(tên) nội dung endsection -->
 @section('content-title', 'Hello')
 @section('content')
-Hello anh em đã đến shop quần áo nữ
+Chào mừng đến giao diện quản trị
 
 @endsection
