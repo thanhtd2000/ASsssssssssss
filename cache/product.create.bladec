@@ -1,0 +1,50 @@
+<!-- Kế thừa lại layout master -->
+<?php $_shouldextend[1]=1; ?>
+
+<!-- Truyền giá trị cho những phần thay đổi -->
+<!-- yield(tên)  ~ section(tên, giá trị) -->
+<?php $this->startSection('title', 'Thêm sản phẩm'); ?>
+
+<!-- yield(tên) ~ section(tên) nội dung endsection -->
+<?php $this->startSection('content-title', 'Danh sách sản phẩm'); ?>
+<?php $this->startSection('content'); ?>
+<div class="addProducts contain">
+ <div class="addProducts__Content">
+ <div class="addProducts__title">
+ <h5>Thêm sản phẩm</h5>
+ </div>
+ <div class="addProducts_form">
+ <form action="" method="post" enctype="multipart/form-data">
+ <div class="form-group">
+ <label for="exampleInputEmail1">Mã sản phẩm</label>
+ <input type="number" class="form-control" disabled id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="auto number">
+ </div>
+ <div class="form-group">
+ <label for="exampleInputEmail1">Tên sản phẩm</label>
+ <input type="text" class="form-control" id="exampleInputEmail1" name="tenks" aria-describedby="emailHelp" placeholder="">
+ </div>
+ <div class="form-group">
+ <label for="exampleInputEmail1">Số lượng</label>
+ <input type="text" class="form-control" id="exampleInputEmail1" name="tenks" aria-describedby="emailHelp" placeholder="">
+ </div>
+ <div class="form-group">
+ <label for="exampleInputEmail1">Mô tả</label>
+ <input type="text" class="form-control" id="exampleInputEmail1" name="tenks" aria-describedby="emailHelp" placeholder="">
+ </div>
+ <div class="form-group">
+ <label for="exampleInputEmail1">Ảnh</label>
+ <input type="file" class="form-control" id="exampleInputEmail1" name="tenks" aria-describedby="emailHelp" placeholder="">
+ </div>
+ <div class="form-group">
+ <label for="exampleInputEmail1">Giá</label>
+ <input type="text" class="form-control" id="exampleInputEmail1" name="tenks" aria-describedby="emailHelp" placeholder="">
+ </div>
+ <input type="submit" name="themmoi" value="Thêm mới" class="btn btn-success">
+ <button type="reset" class="btn btn-danger">Nhập lại</button>
+ <a href="<?php echo \htmlentities(BASE_URL??'', ENT_QUOTES, 'UTF-8', false); ?>product/show "><button type="button" class="btn btn-info">Danh sách</button></a>
+ </form>
+ </div>
+ </div>
+</div>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.master'); } ?>
